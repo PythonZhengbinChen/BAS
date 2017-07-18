@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-cn">
+	<link rel="shortcut icon" type="image/x-icon" href="/static/images/ZNZC.ico" media="screen" />
+	<title>图书分析系统</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+	<meta name="description" content="ECharts, a powerful, interactive charting and visualization library for browser">
+	
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/book_info.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/publishing_info.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/footer.css">
+    <link href="/static/css/jPages.css" rel="stylesheet">
+    <link href="/static/css/animate.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/css/search_result.css">
+</head>
+<body>
+	<div class="nav top_nav">
+		<div class="container">
+			<div class="system_title col-xs-12 col-md-2">
+				<a href="/index">
+					<div class="chinese">图书分析系统</div>
+					<div class="english">Books Analysis System</div>
+				</a>
+			</div>
+			<div class="top_form col-xs-12 col-md-6">
+				<form class=" form-group form-inline " method="get" action="/searchRequest">
+					<input type="text" class="form-control" style="width: 80%;height: 100%;" name="search_text" placeholder="请输入书籍名称、出版社、作者名称">
+					<button class="btn btn-info"  style="width: 15%;height: 100%;" type="submit">search</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="main_info container">
+		<div class="main_left col-xs-12 col-md-9">
+            <div class="search_count col-xs-12 col-md-12">
+                搜索结果：共 <span>0</span> 条
+            </div>
+            <div class="book_ul_box col-xs-12 col-md-12">
+                <ul id="main_list">
+                    <li>
+                        <div class="book_list_box">
+                            <img class="pull-left" src="https://img3.doubanio.com/lpic/s27284878.jpg" width="12%">
+                            <div class="book_list_contant pull-right col-xs-10 col-md-10">
+                                <div class="book_list_title"><a href="https://book.douban.com/subject/25862578/" target="_blank">解忧杂货铺</a></div>
+                                <div class="book_list_nfo">
+                                    [日] 东野圭吾 / 南海出版公司 / 2014-5 
+                                </div>
+                                <div class="book_list_douban_sort">豆瓣评分: <span>8.6</span></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="book_list_box">
+                            <img class="pull-left" src="https://img3.doubanio.com/lpic/s27284878.jpg" width="12%">
+                            <div class="book_list_contant pull-right col-xs-10 col-md-10">
+                                <div class="book_list_title"><a href="https://book.douban.com/subject/25862578/" target="_blank">解忧杂货铺</a></div>
+                                <div class="book_list_nfo">
+                                    [日] 东野圭吾 / 南海出版公司 / 2014-5 
+                                </div>
+                                <div class="book_list_douban_sort">豆瓣评分: <span>8.6</span></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="book_list_box">
+                            <img class="pull-left" src="https://img3.doubanio.com/lpic/s27284878.jpg" width="12%">
+                            <div class="book_list_contant pull-right col-xs-10 col-md-10">
+                                <div class="book_list_title"><a href="https://book.douban.com/subject/25862578/" target="_blank">解忧杂货铺</a></div>
+                                <div class="book_list_nfo">
+                                    [日] 东野圭吾 / 南海出版公司 / 2014-5 
+                                </div>
+                                <div class="book_list_douban_sort">豆瓣评分: <span>8.6</span></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="book_list_box">
+                            <img class="pull-left" src="https://img3.doubanio.com/lpic/s27284878.jpg" width="12%">
+                            <div class="book_list_contant pull-right col-xs-10 col-md-10">
+                                <div class="book_list_title"><a href="https://book.douban.com/subject/25862578/" target="_blank">解忧杂货铺</a></div>
+                                <div class="book_list_nfo">
+                                    [日] 东野圭吾 / 南海出版公司 / 2014-5 
+                                </div>
+                                <div class="book_list_douban_sort">豆瓣评分: <span>8.6</span></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="book_list_box">
+                            <img class="pull-left" src="https://img3.doubanio.com/lpic/s27284878.jpg" width="12%">
+                            <div class="book_list_contant pull-right col-xs-10 col-md-10">
+                                <div class="book_list_title"><a href="https://book.douban.com/subject/25862578/" target="_blank">解忧杂货铺</a></div>
+                                <div class="book_list_nfo">
+                                    [日] 东野圭吾 / 南海出版公司 / 2014-5 
+                                </div>
+                                <div class="book_list_douban_sort">豆瓣评分: <span>8.6</span></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="book_list_box">
+                            <img class="pull-left" src="https://img3.doubanio.com/lpic/s27284878.jpg" width="12%">
+                            <div class="book_list_contant pull-right col-xs-10 col-md-10">
+                                <div class="book_list_title"><a href="https://book.douban.com/subject/25862578/" target="_blank">解忧杂货铺</a></div>
+                                <div class="book_list_nfo">
+                                    [日] 东野圭吾 / 南海出版公司 / 2014-5 
+                                </div>
+                                <div class="book_list_douban_sort">豆瓣评分: <span>8.6</span></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="book_list_box">
+                            <img class="pull-left" src="https://img3.doubanio.com/lpic/s27284878.jpg" width="12%">
+                            <div class="book_list_contant pull-right col-xs-10 col-md-10">
+                                <div class="book_list_title"><a href="https://book.douban.com/subject/25862578/" target="_blank">解忧杂货铺</a></div>
+                                <div class="book_list_nfo">
+                                    [日] 东野圭吾 / 南海出版公司 / 2014-5 
+                                </div>
+                                <div class="book_list_douban_sort">豆瓣评分: <span>8.6</span></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="book_list_box">
+                            <img class="pull-left" src="https://img3.doubanio.com/lpic/s27284878.jpg" width="12%">
+                            <div class="book_list_contant pull-right col-xs-10 col-md-10">
+                                <div class="book_list_title"><a href="https://book.douban.com/subject/25862578/" target="_blank">解忧杂货铺</a></div>
+                                <div class="book_list_nfo">
+                                    [日] 东野圭吾 / 南海出版公司 / 2014-5 
+                                </div>
+                                <div class="book_list_douban_sort">豆瓣评分: <span>8.6</span></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="book_list_box">
+                            <img class="pull-left" src="https://img3.doubanio.com/lpic/s27284878.jpg" width="12%">
+                            <div class="book_list_contant pull-right col-xs-10 col-md-10">
+                                <div class="book_list_title"><a href="https://book.douban.com/subject/25862578/" target="_blank">解忧杂货铺</a></div>
+                                <div class="book_list_nfo">
+                                    [日] 东野圭吾 / 南海出版公司 / 2014-5 
+                                </div>
+                                <div class="book_list_douban_sort">豆瓣评分: <span>8.6</span></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="book_list_box">
+                            <img class="pull-left" src="https://img3.doubanio.com/lpic/s27284878.jpg" width="12%">
+                            <div class="book_list_contant pull-right col-xs-10 col-md-10">
+                                <div class="book_list_title"><a href="https://book.douban.com/subject/25862578/" target="_blank">解忧杂货铺</a></div>
+                                <div class="book_list_nfo">
+                                    [日] 东野圭吾 / 南海出版公司 / 2014-5 
+                                </div>
+                                <div class="book_list_douban_sort">豆瓣评分: <span>8.6</span></div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+            <div class="holder"></div>
+            </div>
+		</div>
+		<div id="publishing_book" class="main_right book_link col-xs-12 col-md-3">
+			<div class="book_link_title col-xs-12 col-md-12">排行榜:</div>
+			<div class="book_list">
+                <ul>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                </ul>    
+            </div>
+		</div>
+	</div>
+
+
+	<footer class="footer_state">
+		<div class="footer_main container">
+			<div class="footer_text pull_left col-xs-12 col-md-8">
+				<div class="BAS_title">
+					<div class="chinese">图书分析系统</div>
+					<div class="english">Books Analysis System</div>
+				</div>
+				<div class="BAS_info">
+					图书分析系统主要是将从豆瓣读书中获取的书籍信息进行分析展示的一个系统，系统的主要目的是为了将这些信息进行大数据分析，挖掘书籍之间的内容关系，出版社关系，作者关系，及某数据的出版历史信息、出版社的出版历史的出版类别、以及作者的出版历史和出版类别。需要建立书籍可视化、出版社可视化、作者可视化。
+				</div>
+			</div>
+			<div class=" other_link col-xs-12 col-md-4 pull_right">
+            	<ul class="col-xs-4 col-md-7 service-items sec hidden-xs">
+                	<li class="title"><a>热门推广</a></li>
+                    <li><a href="http://library.ysu.edu.cn/content.aspx?id=1279 &caid=2" target="_blank">“知识视界”数据库</a></li>
+                    <li><a href="http://library.ysu.edu.cn/content.aspx?id=1278&caid=2" target="_blank">数图教育多媒体资源</a></li>
+                    <li><a href="http://library.ysu.edu.cn/content.aspx?id=1277&caid=2" target="_blank">库客数字音乐图书馆</a></li>
+                    <li><a href="http://library.ysu.edu.cn/content.aspx?id=1242&caid=2" target="_blank">Web of Science在线大讲堂</a></li>
+            	</ul>
+				<ul class="col-xs-4 col-md-5 service-items sec hidden-xs">
+                	<li class="title"><a>友情链接</a></li>
+                    <li><a href="http://www.nlc.cn/" target="_blank">中国国家图书馆</a></li>
+                    <li><a href="http://library.ysu.edu.cn/" target="_blank">燕山大学图书馆</a></li>
+                    <li><a href="https://book.douban.com/" target="_blank">豆瓣读书</a></li>
+                    <li><a href="http://aa.ckcest.cn/" target="_blank">AMiner</a></li>
+            	</ul>
+			</div>
+			<div class="col-xs-12 footright col-md-4 text-left">
+	            <ul class="attention sec">
+	                <li class="title"><a href="#">关注我们</a></li>
+	                <li>
+	                    <a href="http://mail.163.com/" target="_blank" rel="nofollow">
+	                        <span class="glyphicon glyphicon-envelope attention_icon"></span>zhengbinchen2016@163.com
+	                    </a>
+	                </li>
+	                <li class="social-icon">
+	                	<a href="" target="_blank" rel="nofollow">
+	                        <span class="glyphicon glyphicon-hand-right attention_icon"></span>CHEN360522450
+	                    </a>
+	                </li>
+	                <li class="social-icon">
+	                    <img src="/static/images/wechart.jpg" width="50%" height="50%">
+	                </li>
+	            </ul>
+	        </div>
+	        <div class="col-xs-12 col-md-12 text-center ui-intro">
+	        	<div>图书分析系统 - 更多样化的书籍分析 Copyright © 2017, Books Analysis System, Ltd. All Rights Reserved.</div>
+	    	</div>
+		</div>
+		
+	</footer>
+
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/jPages.min.js"></script>
+<script src="/static/js/jpage-main.js"></script>
+<script type="text/javascript">
+function getSearchResult() {
+	var searchResultList = {{ searchResultList|safe }};
+	$(".search_count span").html(searchResultList.length);
+	$("#main_list").html("");
+	for(var i=0;i<searchResultList.length;i++) {
+		var resultJson = JSON.parse(searchResultList[i]);
+		var bookId = resultJson.url.split("/")[4];
+		var str = '<li><div class="book_list_box"><img class="pull-left" src="'+resultJson.coverpagePic+'" width="12%">'
+		+'<div class="book_list_contant pull-right col-xs-10 col-md-10">'
+            +'<div class="book_list_title"><a href="/getBookMainInfo/?bookId='+bookId+'" target="_blank">'+resultJson.title+'</a></div>'
+            +'<div class="book_list_nfo"><a href="/getAuthorInfo/?authorName='+resultJson.author+'">'+resultJson.author+'</a> / '+resultJson.publishing+' / '+resultJson.publishTime+'</div><div class="book_list_douban_sort">豆瓣评分: <span>'+resultJson.doubanScore+'</span></div></div></div></li>'
+		$("#main_list").append(str);
+	}
+}
+
+function getTopList() {
+	$.ajax({
+		url: "/getTopTenBook",
+		async: false,
+		type: "get",
+		dataType: "json",
+		success: function(data) {
+			$(".book_list ul").html("");
+			for(var i=0; i<data.length;i++) {
+				var bookJson = JSON.parse(data[i]);
+				var bookStr = '<li class=""><div class="title_author pull-left"><div class="book_list_title">'+bookJson.title+'</div><div class="book_list_author">'+bookJson.author+'</div></div><div class="read_info pull-right"><a href="'+bookJson.url+'">详情>></a></div></li>';
+				$(".book_list ul").append(bookStr);
+			}
+			
+		},
+		error: function(e) {
+			console.log(e);
+		}
+	});
+}
+
+
+$(function(){
+	getSearchResult();
+    jpage_main();
+    getTopList();
+    });
+</script>
+</body>
+</html>

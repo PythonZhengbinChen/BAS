@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-cn">
+	<link rel="shortcut icon" type="image/x-icon" href="/static/images/ZNZC.ico" media="screen" />
+	<title>图书分析系统</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+	<meta name="description" content="ECharts, a powerful, interactive charting and visualization library for browser">
+	
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/book_info.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/publishing_info.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/author.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/footer.css">
+</head>
+<body>
+	<div class="nav top_nav">
+		<div class="container">
+			<div class="system_title col-xs-12 col-md-2">
+				<a href="/index">
+					<div class="chinese">图书分析系统</div>
+					<div class="english">Books Analysis System</div>
+				</a>
+			</div>
+			<div class="top_form col-xs-12 col-md-6">
+				<form class=" form-group form-inline " method="get" action="/searchRequest">
+					<input type="text" class="form-control" style="width: 80%;height: 100%;" name="search_text" placeholder="请输入书籍名称、出版社、作者名称">
+					<button class="btn btn-info"  style="width: 15%;height: 100%;" type="submit">search</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="main_info container">
+		<div class="main_left col-xs-12 col-md-9">
+            <div class="publishing_title">
+                <a href="{{ authorUrl }}" target="_blank">{{ authorName }}</a>
+                <label class="label label-default">小说</label>
+            </div>
+            <div class="author_brief col-md-12">{{ authorBrief }}</div>
+			<div class="publish_bref col-xs-12 col-md-6">
+				
+                <div id="publishing_info_echart" class="echart_box publishing_view col-xs-12 col-md-12" style="height: 300px; ">
+                </div>
+
+			</div>
+
+			<div class="echart_box publishing_view col-xs-12 col-md-6" style="height: 300px; ">
+				<div id="publishing_box" class="col-xs-12 col-md-12" style="height: 300px;"></div>
+			</div>
+
+
+			<div id="publish_time_box" class="echart_box book_publish_time col-xs-12 col-md-12" style="height: 300px; ">
+				
+			</div>
+		</div>
+		<div id="publishing_book" class="main_right book_link col-xs-12 col-md-3">
+			<div class="book_link_title col-xs-12 col-md-12">作者书籍:</div>
+			<div class="book_list">
+                <ul>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="title_author pull-left">
+                            <div class="book_list_title">白鹿原</div>
+                            <div class="book_list_author">陈忠实</div>
+                        </div>
+                        <div class="read_info pull-right">
+                            <a href="book_info.html">详情>></a>
+                        </div>
+                    </li>
+                </ul>    
+            </div>
+		</div>
+	</div>
+
+
+	<footer class="footer_state">
+		<div class="footer_main container">
+			<div class="footer_text pull_left col-xs-12 col-md-8">
+				<div class="BAS_title">
+					<div class="chinese">图书分析系统</div>
+					<div class="english">Books Analysis System</div>
+				</div>
+				<div class="BAS_info">
+					图书分析系统主要是将从豆瓣读书中获取的书籍信息进行分析展示的一个系统，系统的主要目的是为了将这些信息进行大数据分析，挖掘书籍之间的内容关系，出版社关系，作者关系，及某数据的出版历史信息、出版社的出版历史的出版类别、以及作者的出版历史和出版类别。需要建立书籍可视化、出版社可视化、作者可视化。
+				</div>
+			</div>
+			<div class=" other_link col-xs-12 col-md-4 pull_right">
+            	<ul class="col-xs-4 col-md-7 service-items sec hidden-xs">
+                	<li class="title"><a>热门推广</a></li>
+                    <li><a href="http://library.ysu.edu.cn/content.aspx?id=1279 &caid=2" target="_blank">“知识视界”数据库</a></li>
+                    <li><a href="http://library.ysu.edu.cn/content.aspx?id=1278&caid=2" target="_blank">数图教育多媒体资源</a></li>
+                    <li><a href="http://library.ysu.edu.cn/content.aspx?id=1277&caid=2" target="_blank">库客数字音乐图书馆</a></li>
+                    <li><a href="http://library.ysu.edu.cn/content.aspx?id=1242&caid=2" target="_blank">Web of Science在线大讲堂</a></li>
+            	</ul>
+				<ul class="col-xs-4 col-md-5 service-items sec hidden-xs">
+                	<li class="title"><a>友情链接</a></li>
+                    <li><a href="http://www.nlc.cn/" target="_blank">中国国家图书馆</a></li>
+                    <li><a href="http://library.ysu.edu.cn/" target="_blank">燕山大学图书馆</a></li>
+                    <li><a href="https://book.douban.com/" target="_blank">豆瓣读书</a></li>
+                    <li><a href="http://aa.ckcest.cn/" target="_blank">AMiner</a></li>
+            	</ul>
+			</div>
+			<div class="col-xs-12 footright col-md-4 text-left">
+	            <ul class="attention sec">
+	                <li class="title"><a href="#">关注我们</a></li>
+	                <li>
+	                    <a href="http://mail.163.com/" target="_blank" rel="nofollow">
+	                        <span class="glyphicon glyphicon-envelope attention_icon"></span>zhengbinchen2016@163.com
+	                    </a>
+	                </li>
+	                <li class="social-icon">
+	                	<a href="" target="_blank" rel="nofollow">
+	                        <span class="glyphicon glyphicon-hand-right attention_icon"></span>CHEN360522450
+	                    </a>
+	                </li>
+	                <li class="social-icon">
+	                    <img src="/static/images/wechart.jpg" width="50%" height="50%">
+	                </li>
+	            </ul>
+	        </div>
+	        <div class="col-xs-12 col-md-12 text-center ui-intro">
+	        	<div>图书分析系统 - 更多样化的书籍分析 Copyright © 2017, Books Analysis System, Ltd. All Rights Reserved.</div>
+	    	</div>
+		</div>
+		
+	</footer>
+
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/js/echarts.js"></script>
+<script type="text/javascript">
+
+//出版社的关联
+var myChart = echarts.init(document.getElementById('publishing_box'));
+
+//出版社的关联
+var publishingChart = echarts.init(document.getElementById('publishing_info_echart'));
+//书籍的关联
+var publishTimeChart = echarts.init(document.getElementById('publish_time_box'));
+
+myChart.showLoading();
+
+var webkitDep = {
+    "type": "force",
+    "categories": [
+        
+        {
+            "name": "WebGL",
+            "keyword": {},
+            "base": "WebGLRenderingContext"
+        },{
+            "name": "HTMLElement",
+            "keyword": {},
+            "base": "HTMLElement"
+        },
+        {
+            "name": "SVG",
+            "keyword": {},
+            "base": "SVGElement"
+        },
+        {
+            "name": "CSS",
+            "keyword": {},
+            "base": "CSSRule"
+        },
+        {
+            "name": "Other",
+            "keyword": {}
+        }
+    ],
+    "nodes": [
+        {
+            "name": "AnalyserNode",
+            "value": 1,
+            "category": 0,
+            "symbol": 'rect'
+        },
+        {
+            "name": "AnalyserNode",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "AudioNode",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "Uint8Array",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "Float32Array",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "ArrayBuffer",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "ArrayBufferView",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "Attr",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "Node",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "Element",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "AudioBuffer",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "AudioBufferCallback",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "AudioBufferSourceNode",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "AudioSourceNode",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "AudioGain",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "AudioParam",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "AudioContext",
+            "value": 1,
+            "category": 4
+        },
+
+        {
+            "name": "AudioNode",
+            "value": 1,
+            "category": 1
+        }
+
+        ],
+        "links": [
+        {
+            "source": 0,
+            "target": 1
+        },
+        {
+            "source": 0,
+            "target": 2
+        },
+        {
+            "source": 4,
+            "target": 3
+        },
+        {
+            "source": 3,
+            "target": 4
+        },
+        {
+            "source": 5,
+            "target": 4
+        },
+        {
+            "source": 6,
+            "target": 7
+        },
+        {
+            "source": 6,
+            "target": 8
+        },
+        {
+            "source": 9,
+            "target": 3
+        },
+        {
+            "source": 10,
+            "target": 9
+        },
+        {
+            "source": 11,
+            "target": 12
+        },
+        {
+            "source": 11,
+            "target": 9
+        }
+        	]
+    };
+    myChart.hideLoading();
+
+    option = {
+    	title: {
+    		show: true,
+    		text: "相关联的作者",
+    		textAlign: "left",
+    	},
+        legend: {
+        	show: false,
+            data: ['HTMLElement', 'WebGL', 'SVG', 'CSS', 'Other']
+        },
+        series: [{
+            type: 'graph',
+            layout: 'force',
+            animation: false,
+            label: {
+                normal: {
+                    position: 'right',
+                    formatter: '{b}'
+                }
+            },
+            draggable: true,
+            data: webkitDep.nodes.map(function (node, idx) {
+                node.id = idx;
+                return node;
+            }),
+            categories: webkitDep.categories,
+            force: {
+                // initLayout: 'circular'
+                // repulsion: 20,
+                edgeLength: 5,
+                repulsion: 30,
+                gravity: 0.1
+            },
+            edges: webkitDep.links
+        }]
+    };
+
+
+publishTimeOption = {
+	title: {
+    		show: true,
+    		text: "作者出版历史时间轴",
+    		textAlign: "left",
+    	},
+    color: ['#3398DB'],
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis : [
+        {
+            type : 'category',
+            data : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            axisTick: {
+                alignWithLabel: true
+            }
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value'
+        }
+    ],
+    series : [
+        {
+            name:'直接访问',
+            type:'bar',
+            barWidth: '60%',
+            data:[100, 152, 200, 334, 390, 330, 220]
+        }
+    ]
+};
+
+
+var publishOption = {
+    title: {
+        text: '作者数据'
+    },
+    tooltip: {},
+    legend: {
+        show: false,
+        data: ['作者详情']
+    },
+    radar: {
+        // shape: 'circle',
+        indicator: [
+           { name: '出版总数'},
+           { name: '豆瓣评分'},
+           { name: '豆瓣标签数'}
+        ]
+    },
+    series: [{
+        name: '',
+        type: 'radar',
+        // areaStyle: {normal: {}},
+        data : [
+            {
+                value : [{{ count }}, {{ sorce }}, {{ tabs }}],
+                name : '数据详情'
+            }
+        ]
+    }]
+};
+
+    myChart.setOption(option);
+    publishingChart.setOption(publishOption);
+    publishTimeChart.setOption(publishTimeOption);
+</script>
+
+<script type="text/javascript">
+function getAuthorInfo() {
+	var authorInfo = {{ authorInfo|safe }};
+	console.log(authorInfo);
+	$(".publishing_title label").html(authorInfo.authorTab);
+	$(".book_list ul").html("");
+	$.ajax({
+		url: "/getAuthorPublishList",
+		async: false,
+		data: {
+			authorName : "{{ authorName }}"
+		},
+		type: "get",
+		dataType: "json",
+		success: function(data) {
+			if(data.length == 0) {
+				return;
+			}
+			for(var i = 0;i<data.length; i++) {
+				var bookData = JSON.parse(data[i]);
+				var bookId = bookData.url.split("/")[4];
+				var str = '<li class=""><div class="title_author pull-left"><div class="book_list_title">'+bookData.title+'</div><div class="book_list_author">'+bookData.author+'</div></div><div class="read_info pull-right"><a href="/getBookMainInfo/?bookId='+bookId+'" target="_blank">详情>></a></div></li>';
+				$(".book_list ul").append(str);
+			}
+			
+		},
+		error: function(e) {
+			console.log(e);
+		}
+	});
+}
+
+
+$(function() {
+	getAuthorInfo();
+})
+</script>
+</body>
+</html>
