@@ -1,0 +1,78 @@
+@charset 'utf-8';
+
+
+.footer_state {
+	width: 100%;
+	margin: 0px auto;
+	background-color: #272b35;
+	color: #bbb;
+	padding: 10px 0;
+	border-top: 3px solid #fff;
+}
+
+.footer_text {
+	width: 30%;
+	padding: 1%;
+}
+
+.footer_text .chinese {
+	font-size: 28px;
+	color: #fcfcfc;
+}
+.footer_text .english {
+	font-size: 10px;
+	color: #fcfcfc;
+}
+
+.footer_text .BAS_info ,.text-left{
+	margin-top: 10px;
+	font-size: 13px;
+}
+
+.footer_main .other_link {
+	overflow: hidden;
+	padding: 1%;
+}
+
+.footer_main  .sec li{
+	list-style: none;
+	font-size:14px;
+	line-height:25px;
+	position:relative
+
+}
+.footer_main  .sec li a {
+	color: #bbb;
+	display: block;
+}
+.footer_main  .sec .title{
+	position:relative;
+	padding: 3px 0;
+}
+
+.footer_main  .sec .title a{
+	font-size: 20px;
+	color: #fcfcfc;
+}
+
+/*创建动画效果*/
+.footer_main  .sec .title:after{
+	position:absolute;
+	bottom:-3px;
+	left:0;
+	overflow:hidden;
+	width:27px;
+	height:5px;
+	content:'';
+	transition-duration:.7s;
+	background-color:#f7505a;
+}
+.footer_main  .sec:hover .title::after {
+	width:100%
+}
+
+.attention_icon {
+	font-size: 22px;
+	padding: 5px 5px 5px 0;
+}
+

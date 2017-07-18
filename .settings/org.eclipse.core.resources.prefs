@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+encoding//src/bas/blog/control/bookControl.py=utf-8
+encoding//src/bas/blog/control/getAuthorBrief.py=utf-8
+encoding//src/bas/blog/control/searchControl.py=utf-8
+encoding//src/bas/blog/modal/bookModal.py=utf-8
+encoding//src/bas/blog/modal/db.py=utf-8
+encoding//src/bas/blog/mongoConn/db.py=utf-8
+encoding//src/bas/blog/tests.py=utf-8

@@ -1,0 +1,18 @@
+@charset 'utf-8';
+
+.author_brief {
+	padding: 0 0 2% 0; 
+	margin-bottom: 20px;
+	font-size: 14px;
+	color: #666;
+	line-height: 22px;
+	text-indent: 28px;
+	border-bottom: 1px dashed #ccc;
+}
+
+.publishing_title a {
+	color: #61524D;
+}
+
+.publish_bref {
+}

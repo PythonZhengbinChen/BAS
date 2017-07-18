@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-cn">
+	<link rel="shortcut icon" type="image/x-icon" href="/static/images/ZNZC.ico" media="screen" />
+	<title>图书分析系统</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+	<meta name="description" content="ECharts, a powerful, interactive charting and visualization library for browser">
+	
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/book_info.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/footer.css">
+</head>
+<body>
+	<div class="nav top_nav">
+		<div class="container">
+			<div class="system_title col-xs-12 col-md-2">
+				<a href="/index">
+					<div class="chinese">图书分析系统</div>
+					<div class="english">Books Analysis System</div>
+				</a>
+			</div>
+			<div class="top_form col-xs-12 col-md-6">
+				<form class=" form-group form-inline " method="get" action="/searchRequest">
+					<input type="text" class="form-control" style="width: 80%;height: 100%;" name="search_text" placeholder="请输入书籍名称、出版社、作者名称">
+					<button class="btn btn-info"  style="width: 15%;height: 100%;" type="submit">search</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="main_info container">
+		<div class="main_left col-xs-12 col-md-9">
+			<div class="book_bref">
+				<div class="book_title">
+				<a href="https://book.douban.com/subject/25862578/" target="_blank">解忧杂货店</a></div>
+				<div class="book_text_out1 col-xs-12 col-md-12">
+					<div class="pull-left book_text_out2 col-xs-12 col-md-10">
+						<div class="pull-left book_img col-xs-12 col-md-4" >
+							<img src="https://img3.doubanio.com/lpic/s27284878.jpg" width="70%">
+						</div>
+						<div class="pull-left book_list col-xs-12 col-md-8">
+							<div>作者: <span class="author">[日] 东野圭吾</span></div>
+							<div>出版时间: <span class="publish_time">2014-5</span></div>
+							<div>出版社: <span class="publishing">南海出版公司</span></div>
+							<div>类别: <span class="category">小说</span></div>
+							<div>内容简介: <span class="content_brief">现代人内心流失的东西，这家杂货店能帮你找回——
+僻静的街道旁有一家杂货店，只要写下烦恼投进卷帘门的投信口，第二天就会在店后的牛奶箱里得到回答。
+因男友身患绝症，年轻女孩静子在爱情与梦想间徘徊；克郎为了音乐梦想离家漂泊，却在现实中寸步难行；少年浩介面临家庭巨变，挣扎在亲情与未来的迷茫中……
+他们将困惑写成信投进杂货店，随即奇妙的事情竟不断发生。
+生命中的一次偶然交会，将如何演绎出截然不同的人生？
+如今回顾写作过程，我发现自己始终在思考一个问题：站在人生的岔路口，人究竟应该怎么做？我希望读者能在掩卷时喃喃自语：我从未读过这样的小说。——东野圭吾</span></div>
+						</div>
+					</div>
+					<div class="pull-right book_sort col-xs-12 col-md-2">
+						豆瓣评分: <div class="douban_sort">8.6</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="echart_box publishing_view col-xs-12 col-md-6" style="height: 300px; ">
+				<div id="publishing_box" class="col-xs-12 col-md-12" style="height: 300px;"></div>
+			</div>
+
+			<div class="echart_box book_link_view col-xs-12 col-md-6" style="height: 300px;">
+				<div id="book_link_box" class="col-xs-12 col-md-12" style="height: 300px; "></div>
+			</div>
+
+			<div id="publish_time_box" class="echart_box book_publish_time col-xs-12 col-md-12" style="height: 300px; ">
+				
+			</div>
+		</div>
+		<div class="main_right book_link col-xs-12 col-md-3">
+			<div class="book_link_title col-xs-12 col-md-12">相关书籍:</div>
+			<div class="book_link_container">
+				<div class="book_link_box col-xs-6 col-md-5">
+					<img src="https://img3.doubanio.com/lpic/s4610502.jpg" width="100%">
+					<a href="https://book.douban.com/subject/3259440/">白夜行</a>
+				</div>
+				<div class="book_link_box col-xs-6 col-md-5">
+					<img src="https://img3.doubanio.com/lpic/s4610502.jpg" width="100%">
+					<a href="https://book.douban.com/subject/3259440/">白夜行</a>
+				</div>
+				<div class="book_link_box col-xs-6 col-md-5">
+					<img src="https://img3.doubanio.com/lpic/s4610502.jpg" width="100%">
+					<a href="https://book.douban.com/subject/3259440/">白夜行</a>
+				</div>
+				<div class="book_link_box col-xs-6 col-md-5">
+					<img src="https://img3.doubanio.com/lpic/s4610502.jpg" width="100%">
+					<a href="https://book.douban.com/subject/3259440/">白夜行</a>
+				</div>
+				<div class="book_link_box col-xs-6 col-md-5">
+					<img src="https://img3.doubanio.com/lpic/s4610502.jpg" width="100%">
+					<a href="https://book.douban.com/subject/3259440/">白夜行</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<footer class="footer_state">
+		<div class="footer_main container">
+			<div class="footer_text pull_left col-xs-12 col-md-8">
+				<div class="BAS_title">
+					<div class="chinese">图书分析系统</div>
+					<div class="english">Books Analysis System</div>
+				</div>
+				<div class="BAS_info">
+					图书分析系统主要是将从豆瓣读书中获取的书籍信息进行分析展示的一个系统，系统的主要目的是为了将这些信息进行大数据分析，挖掘书籍之间的内容关系，出版社关系，作者关系，及某数据的出版历史信息、出版社的出版历史的出版类别、以及作者的出版历史和出版类别。需要建立书籍可视化、出版社可视化、作者可视化。
+				</div>
+			</div>
+			<div class=" other_link col-xs-12 col-md-4 pull_right">
+            	<ul class="col-xs-4 col-md-7 service-items sec hidden-xs">
+                	<li class="title"><a>热门推广</a></li>
+                    <li><a href="http://library.ysu.edu.cn/content.aspx?id=1279 &caid=2" target="_blank">“知识视界”数据库</a></li>
+                    <li><a href="http://library.ysu.edu.cn/content.aspx?id=1278&caid=2" target="_blank">数图教育多媒体资源</a></li>
+                    <li><a href="http://library.ysu.edu.cn/content.aspx?id=1277&caid=2" target="_blank">库客数字音乐图书馆</a></li>
+                    <li><a href="http://library.ysu.edu.cn/content.aspx?id=1242&caid=2" target="_blank">Web of Science在线大讲堂</a></li>
+            	</ul>
+				<ul class="col-xs-4 col-md-5 service-items sec hidden-xs">
+                	<li class="title"><a>友情链接</a></li>
+                    <li><a href="http://www.nlc.cn/" target="_blank">中国国家图书馆</a></li>
+                    <li><a href="http://library.ysu.edu.cn/" target="_blank">燕山大学图书馆</a></li>
+                    <li><a href="https://book.douban.com/" target="_blank">豆瓣读书</a></li>
+                    <li><a href="http://aa.ckcest.cn/" target="_blank">AMiner</a></li>
+            	</ul>
+			</div>
+			<div class="col-xs-12 footright col-md-4 text-left">
+	            <ul class="attention sec">
+	                <li class="title"><a href="#">关注我们</a></li>
+	                <li>
+	                    <a href="http://mail.163.com/" target="_blank" rel="nofollow">
+	                        <span class="glyphicon glyphicon-envelope attention_icon"></span>zhengbinchen2016@163.com
+	                    </a>
+	                </li>
+	                <li class="social-icon">
+	                	<a href="" target="_blank" rel="nofollow">
+	                        <span class="glyphicon glyphicon-hand-right attention_icon"></span>CHEN360522450
+	                    </a>
+	                </li>
+	                <li class="social-icon">
+	                    <img src="/static/images/wechart.jpg" width="50%" height="50%">
+	                </li>
+	            </ul>
+	        </div>
+	        <div class="col-xs-12 col-md-12 text-center ui-intro">
+	        	<div>图书分析系统 - 更多样化的书籍分析 Copyright © 2017, Books Analysis System, Ltd. All Rights Reserved.</div>
+	    	</div>
+		</div>
+		
+	</footer>
+
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/js/echarts.js"></script>
+<script type="text/javascript">
+
+//出版社的关联
+var publishingLinkChart = echarts.init(document.getElementById('publishing_box'));
+//书籍的关联
+var bookLinkChart = echarts.init(document.getElementById('book_link_box'));
+//书籍的关联
+var publishTimeChart = echarts.init(document.getElementById('publish_time_box'));
+
+
+
+var webkitDep = {
+    "type": "force",
+    "categories": [
+        
+        {
+            "name": "WebGL",
+            "keyword": {},
+            "base": "WebGLRenderingContext"
+        },{
+            "name": "HTMLElement",
+            "keyword": {},
+            "base": "HTMLElement"
+        },
+        {
+            "name": "SVG",
+            "keyword": {},
+            "base": "SVGElement"
+        },
+        {
+            "name": "CSS",
+            "keyword": {},
+            "base": "CSSRule"
+        },
+        {
+            "name": "Other",
+            "keyword": {}
+        }
+    ],
+    "nodes": [
+        {
+            "name": "AnalyserNode",
+            "value": 1,
+            "category": 0,
+            "symbol": 'rect'
+        },
+        {
+            "name": "AnalyserNode",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "AudioNode",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "Uint8Array",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "Float32Array",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "ArrayBuffer",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "ArrayBufferView",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "Attr",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "Node",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "Element",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "AudioBuffer",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "AudioBufferCallback",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "AudioBufferSourceNode",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "AudioSourceNode",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "AudioGain",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "AudioParam",
+            "value": 1,
+            "category": 4
+        },
+        {
+            "name": "AudioContext",
+            "value": 1,
+            "category": 4
+        },
+
+        {
+            "name": "AudioNode",
+            "value": 1,
+            "category": 1
+        }
+
+        ],
+        "links": [
+        {
+            "source": 0,
+            "target": 1
+        },
+        {
+            "source": 0,
+            "target": 2
+        },
+        {
+            "source": 4,
+            "target": 3
+        },
+        {
+            "source": 3,
+            "target": 4
+        },
+        {
+            "source": 5,
+            "target": 4
+        },
+        {
+            "source": 6,
+            "target": 7
+        },
+        {
+            "source": 6,
+            "target": 8
+        },
+        {
+            "source": 9,
+            "target": 3
+        },
+        {
+            "source": 10,
+            "target": 9
+        },
+        {
+            "source": 11,
+            "target": 12
+        },
+        {
+            "source": 11,
+            "target": 9
+        }
+        	]
+    };
+
+    option = {
+    	title: {
+    		show: true,
+    		text: "出版社关联图",
+    		textAlign: "left",
+    	},
+        legend: {
+        	show: false,
+            data: ['HTMLElement', 'WebGL', 'SVG', 'CSS', 'Other']
+        },
+        series: [{
+            type: 'graph',
+            layout: 'force',
+            animation: false,
+            label: {
+                normal: {
+                    position: 'right',
+                    formatter: '{b}'
+                }
+            },
+            draggable: true,
+            data: webkitDep.nodes.map(function (node, idx) {
+                node.id = idx;
+                return node;
+            }),
+            categories: webkitDep.categories,
+            force: {
+                // initLayout: 'circular'
+                // repulsion: 20,
+                edgeLength: 5,
+                repulsion: 30,
+                gravity: 0.1
+            },
+            edges: webkitDep.links
+        }]
+    };
+
+    bookLinkOption = {
+    	title: {
+    		show: true,
+    		text: "书籍关联图",
+    		textAlign: "left",
+    	},
+        legend: {
+        	show: false,
+            data: ['HTMLElement', 'WebGL', 'SVG', 'CSS', 'Other']
+        },
+        series: [{
+            type: 'graph',
+            layout: 'force',
+            animation: false,
+            label: {
+                normal: {
+                    position: 'right',
+                    formatter: '{b}'
+                }
+            },
+            draggable: true,
+            data: webkitDep.nodes.map(function (node, idx) {
+                node.id = idx;
+                return node;
+            }),
+            categories: webkitDep.categories,
+            force: {
+                // initLayout: 'circular'
+                // repulsion: 20,
+                edgeLength: 5,
+                repulsion: 30,
+                gravity: 0.1
+            },
+            edges: webkitDep.links
+        }]
+    };
+
+
+publishTimeOption = {
+	title: {
+    		show: true,
+    		text: "书籍出版历史时间轴",
+    		textAlign: "left",
+    	},
+    color: ['#3398DB'],
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis : [
+        {
+            type : 'category',
+            data : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            axisTick: {
+                alignWithLabel: true
+            }
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value'
+        }
+    ],
+    series : [
+        {
+            name:'直接访问',
+            type:'bar',
+            barWidth: '60%',
+            data:[100, 152, 200, 334, 390, 330, 220]
+        }
+    ]
+};
+
+    publishingLinkChart.setOption(option);
+
+    bookLinkChart.setOption(bookLinkOption);
+
+    publishTimeChart.setOption(publishTimeOption);
+</script>
+
+<script type="text/javascript">
+function getBookAndPublishingInfo() {
+	$(".book_link_container").html("");
+	$(".book_title a").html("");
+	$(".book_img img").attr("src","");
+	
+	var bookMainInfo = {{ bookMainInfo|safe }};
+	var publishingInfo = {{ publishingInfo|safe }};
+	bookMainInfo = JSON.parse(bookMainInfo)
+	$(".book_title a").html(bookMainInfo.title);
+	$(".book_title a").attr("href",bookMainInfo.url);
+	$(".book_img img").attr("src",bookMainInfo.coverpagePic);
+	$(".author").html(bookMainInfo.author);
+	$(".publish_time").html(bookMainInfo.publishTime);
+	$(".publishing").html(bookMainInfo.publishing);
+	$(".category").html(bookMainInfo.tab);
+	$(".content_brief").html(bookMainInfo.contentBrief);
+	$(".douban_sort").html(bookMainInfo.doubanScore)
+	
+	var relevanceBooks = bookMainInfo.relevanceBooks;
+	for(var i = 0; i< relevanceBooks.length; i++ ) {
+		var bookId = relevanceBooks[i].bookUrl.split("/")[4];
+		$.ajax({
+			url: "/getRelevanceBook",
+			async: false,
+			data: {
+				bookId : bookId
+			},
+			type: "get",
+			dataType: "json",
+			success: function(data) {
+				if(data == "") {
+					return;
+				}
+				var bookData = JSON.parse(data);
+				var bookId = bookData.url.split("/")[4];
+				var str = '<div class="book_link_box col-xs-6 col-md-5"><img src="'+bookData.coverpagePic+'" width="100%"><a href="/getBookMainInfo/?bookId='+bookId+'">'+bookData.title+'</a></div>';
+				$(".book_link_container").append(str);
+			},
+			error: function(e) {
+				console.log(e);
+			}
+		});
+	}
+	
+}
+
+</script>
+
+<script type="text/javascript">
+$(function() {
+	getBookAndPublishingInfo();
+});
+</script>
+</body>
+</html>

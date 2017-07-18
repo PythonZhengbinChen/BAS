@@ -1,0 +1,90 @@
+@charset 'utf-8';
+
+.publishing_title {
+	margin: 0 0 3% 1.5%;
+	font-size: 30px;
+	font-weight: bold;
+	color: #61524D;
+	font-family: "楷体";
+	font-style: italic;
+}
+
+.publishing_tab label {
+	font-size: 15px;
+	margin-left: 1%;
+}
+
+.publishing_sort {
+	padding: 2%;
+	border-left: 1px solid #ccc;
+}
+
+.publishing_sort .douban_sort {
+	font-size: 32px;
+	color: #61524D;
+	font-weight: bold;
+}
+
+
+
+#publishing_book {
+	height: 600px;
+	padding: 0 0 50px 0;
+}
+
+.book_link_title {
+	font-size: 20px;
+	color: #61524D;
+	padding: 2%;
+	border-bottom: 2px solid #61524D;
+	font-weight: bold;
+}
+
+.book_list {
+	height: 100%;
+	width: 110%;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.book_list ul li {
+	list-style: none;
+	padding: 2% 0;
+	margin-top: 1%;
+	border-bottom: 1px dashed #ccc;
+	overflow: hidden;
+}
+
+.book_list ul li:hover {
+	background-color: #fcfcfc;
+} 
+
+
+.book_list_title {
+	font-size: 16px;
+	color: #337ab7;
+}
+
+.book_list_author {
+	font-size: 14px;
+	color: #ccc;
+}
+
+.read_info {
+	margin-top: 4%;
+	width: 20%;
+
+}
+
+.read_info a {
+	display: block;
+	padding: 2% 4%;
+	color: #61524D;
+	font-size: 12px;
+	text-align: center;
+}
+
+.read_info a:hover {
+	border: 1px solid #61524D;
+	border-radius: 3px;
+}
